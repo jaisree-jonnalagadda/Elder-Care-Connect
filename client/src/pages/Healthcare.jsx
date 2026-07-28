@@ -1,116 +1,109 @@
-import {useEffect,useState} from "react";
+import { useEffect, useState } from "react";
 import API from "../api/api";
 import "./Healthcare.css";
 
 
-function Healthcare(){
+function Healthcare() {
 
-const [services,setServices]=useState([]);
-
-
-useEffect(()=>{
+    const [healthcare, setHealthcare] = useState([]);
 
 
-API.get("/healthcare")
+    useEffect(() => {
 
-.then((res)=>{
+        API.get("/healthcare")
+            .then((res) => {
 
-console.log(res.data);
+                console.log(res.data);
+                setHealthcare(res.data);
 
-setServices(res.data);
+            })
+            .catch((err) => {
 
-})
+                console.log(err);
 
+            });
 
-.catch((err)=>{
-
-console.log(err);
-
-});
-
-
-},[]);
+    }, []);
 
 
 
-return(
+    return (
 
-<div className="health-page">
+        <div className="health-page">
 
-
-<h1>
-Government Healthcare Services
-</h1>
-
-
-<p>
-Healthcare facilities available for senior citizens.
-</p>
+            <h1>
+                Government Healthcare Services
+            </h1>
 
 
-
-<div className="health-container">
-
-
-{
-
-services.length>0 ?
+            <p>
+                Healthcare facilities available for senior citizens.
+            </p>
 
 
-services.map((item)=>(
+
+            <div className="health-container">
 
 
-<div className="health-card" key={item._id}>
+                {
+                    healthcare.length > 0 ?
+
+                    healthcare.map((item) => (
+
+                        <div className="health-card" key={item._id}>
 
 
-<h2>
-{item.serviceName}
-</h2>
+                            <h2>
+                                🏥 {item.hospitalName}
+                            </h2>
 
 
-<p>
-{item.description}
-</p>
+                            <h4>
+                                Services Provided:
+                            </h4>
+
+                            <p>
+                                {item.services}
+                            </p>
 
 
-<p>
-📍 {item.location}
-</p>
+                            <h4>
+                                Contact:
+                            </h4>
+
+                            <p>
+                                📞 {item.contact}
+                            </p>
 
 
-<a 
-href={item.link}
-target="_blank"
->
-Visit Service
-</a>
+                            <h4>
+                                Location:
+                            </h4>
+
+                            <p>
+                                📍 {item.location}
+                            </p>
 
 
-</div>
+                        </div>
+
+                    ))
+
+                    :
+
+                    <h2>
+                        No Healthcare Services Available
+                    </h2>
+
+                }
 
 
-))
+            </div>
 
 
-:
+        </div>
 
-
-<h2>
-No Healthcare Services Available
-</h2>
-
-
-}
-
-
-</div>
-
-
-</div>
-
-
-);
-
+    );
 
 }
 
