@@ -1,0 +1,269 @@
+/* ============================= */
+/* DARK MODE COMPLETE THEME */
+/* ============================= */
+
+
+.dark-mode{
+
+    background:#111827;
+    color:white;
+
+}
+
+
+/* Navbar */
+
+.dark-mode .navbar{
+
+    background:#020617;
+
+}
+
+
+.dark-mode .nav-links a{
+
+    color:#e5e7eb;
+
+}
+
+
+.dark-mode .logo a{
+
+    color:#60a5fa;
+
+}
+
+
+
+
+/* Hero Section */
+
+.dark-mode .hero{
+
+    background:linear-gradient(
+        135deg,
+        #111827,
+        #064e3b
+    );
+
+}
+
+
+
+.dark-mode .hero h1{
+
+    background:linear-gradient(
+        90deg,
+        #60a5fa,
+        #34d399
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+
+
+.dark-mode .hero h2{
+
+    color:white;
+
+}
+
+
+
+.dark-mode .hero p{
+
+    color:#e5e7eb;
+
+}
+
+
+
+
+/* Hero Buttons */
+
+.dark-mode .hero-buttons a{
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #059669
+    );
+
+    color:white;
+
+}
+
+
+
+
+/* Services Section */
+
+
+.dark-mode .services-section{
+
+    background:#111827;
+
+}
+
+
+
+.dark-mode .services-section h1{
+
+    color:white;
+
+}
+
+
+
+.dark-mode .section-description{
+
+    color:#d1d5db;
+
+}
+
+
+
+.dark-mode .service-card{
+
+    background:#1f2937;
+
+    color:white;
+
+}
+
+
+
+.dark-mode .service-card h2{
+
+    color:#60a5fa;
+
+}
+
+
+
+.dark-mode .service-card p{
+
+    color:#d1d5db;
+
+}
+
+
+
+
+
+/* Mission Section */
+
+
+.dark-mode .mission{
+
+    background:#020617;
+
+}
+
+
+
+.dark-mode .mission h1{
+
+    color:white;
+
+}
+
+
+
+.dark-mode .mission p{
+
+    color:#d1d5db;
+
+}
+
+
+
+
+
+/* Statistics Cards */
+
+
+.dark-mode .stats div{
+
+    background:#1f2937;
+
+    color:white;
+
+}
+
+
+
+.dark-mode .stats h2{
+
+    color:#34d399;
+
+}
+
+
+
+
+/* Emergency / Healthcare / Welfare Cards */
+
+
+.dark-mode .emergency-card,
+.dark-mode .hospital-card,
+.dark-mode .scheme-card{
+
+    background:#1f2937;
+
+    color:white;
+
+}
+
+
+
+.dark-mode .emergency-card p,
+.dark-mode .hospital-card p,
+.dark-mode .scheme-card p{
+
+    color:#d1d5db;
+
+}
+
+
+
+
+/* Contact */
+
+
+.dark-mode .contact-container{
+
+    background:#1f2937;
+
+    color:white;
+
+}
+
+
+
+.dark-mode input,
+.dark-mode textarea{
+
+    background:#111827;
+
+    color:white;
+
+    border:1px solid #374151;
+
+}
+
+
+
+
+/* Footer */
+
+
+.dark-mode .footer{
+
+    background:#020617;
+
+}

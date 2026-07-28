@@ -1,0 +1,524 @@
+.home{
+
+font-family:Arial, sans-serif;
+
+}
+
+
+
+/* HERO */
+
+.hero{
+
+min-height:80vh;
+
+display:flex;
+
+align-items:center;
+
+padding:80px 10%;
+
+background:linear-gradient(
+135deg,
+#eff6ff,
+#ecfdf5
+);
+
+}
+
+
+.hero-content{
+
+max-width:800px;
+
+}
+
+
+.hero h1{
+
+font-size:60px;
+
+font-weight:800;
+
+background:linear-gradient(
+90deg,
+#2563eb,
+#059669
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+
+
+.hero h2{
+
+font-size:32px;
+
+color:#111827;
+
+margin-top:20px;
+
+}
+
+
+
+.hero p{
+
+font-size:20px;
+
+line-height:1.7;
+
+color:#374151;
+
+margin-top:20px;
+
+}
+
+
+
+.hero-buttons a{
+
+display:inline-block;
+
+margin-top:30px;
+
+margin-right:15px;
+
+padding:15px 30px;
+
+background:#2563eb;
+
+color:white;
+
+border-radius:12px;
+
+text-decoration:none;
+
+font-weight:600;
+
+}
+
+
+
+
+
+/* SERVICES */
+
+
+.services-section{
+
+padding:70px 10%;
+
+text-align:center;
+
+}
+
+
+.services-section h1{
+
+font-size:42px;
+
+color:#1f2937;
+
+}
+
+
+
+.section-description{
+
+font-size:18px;
+
+color:#4b5563;
+
+max-width:700px;
+
+margin:auto;
+
+}
+
+
+
+.service-grid{
+
+margin-top:50px;
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+}
+
+
+
+.service-card{
+
+padding:35px;
+
+background:white;
+
+border-radius:20px;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,0.1);
+
+transition:.3s;
+
+}
+
+
+
+.service-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+
+
+.service-icon{
+
+font-size:50px;
+
+}
+
+
+
+.service-card h2{
+
+color:#2563eb;
+
+}
+
+
+
+.service-card p{
+
+color:#4b5563;
+
+line-height:1.6;
+
+}
+
+
+
+
+
+/* MISSION */
+
+
+.mission{
+
+padding:70px 10%;
+
+text-align:center;
+
+background:#f8fafc;
+
+}
+
+
+
+.mission h1{
+
+font-size:42px;
+
+}
+
+
+
+.mission p{
+
+font-size:19px;
+
+line-height:1.7;
+
+max-width:850px;
+
+margin:20px auto;
+
+color:#374151;
+
+}
+
+
+
+.stats{
+
+display:flex;
+
+justify-content:center;
+
+gap:40px;
+
+margin-top:40px;
+
+flex-wrap:wrap;
+
+}
+
+
+
+.stats div{
+
+background:white;
+
+padding:25px 40px;
+
+border-radius:15px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+
+
+.stats h2{
+
+color:#059669;
+
+font-size:35px;
+
+}/* ===========================
+   WHY CHOOSE SECTION
+=========================== */
+
+.why{
+
+padding:70px 10%;
+
+background:#ffffff;
+
+text-align:center;
+
+}
+
+.why h2{
+
+font-size:42px;
+
+margin-bottom:40px;
+
+color:#1f2937;
+
+}
+
+.why-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:25px;
+
+margin-top:30px;
+
+}
+
+.why-grid div{
+
+background:#f8fafc;
+
+padding:25px;
+
+border-radius:15px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+font-size:18px;
+
+font-weight:500;
+
+transition:.3s;
+
+}
+
+.why-grid div:hover{
+
+transform:translateY(-8px);
+
+}
+
+
+
+/* ===========================
+   UPDATES SECTION
+=========================== */
+
+.updates{
+
+padding:70px 10%;
+
+background:#ecfeff;
+
+text-align:center;
+
+}
+
+.updates h2{
+
+font-size:42px;
+
+margin-bottom:40px;
+
+color:#1f2937;
+
+}
+
+.update-card{
+
+background:white;
+
+padding:25px;
+
+margin:20px auto;
+
+border-left:6px solid #2563eb;
+
+border-radius:12px;
+
+max-width:850px;
+
+text-align:left;
+
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+font-size:18px;
+
+}
+
+
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.primary-btn{
+
+background:#2563eb;
+
+color:white;
+
+padding:15px 28px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+margin-right:15px;
+
+display:inline-block;
+
+}
+
+.secondary-btn{
+
+background:#059669;
+
+color:white;
+
+padding:15px 28px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+display:inline-block;
+
+}
+
+
+
+/* ===========================
+   DARK MODE
+=========================== */
+
+.dark-mode .hero{
+
+background:linear-gradient(
+135deg,
+#111827,
+#064e3b
+);
+
+}
+
+.dark-mode .hero h2,
+
+.dark-mode .hero p{
+
+color:#f3f4f6;
+
+}
+
+.dark-mode .services-section{
+
+background:#111827;
+
+}
+
+.dark-mode .services-section h1,
+
+.dark-mode .mission h1,
+
+.dark-mode .why h2,
+
+.dark-mode .updates h2{
+
+color:white;
+
+}
+
+.dark-mode .section-description,
+
+.dark-mode .mission p{
+
+color:#d1d5db;
+
+}
+
+.dark-mode .service-card,
+
+.dark-mode .stats div,
+
+.dark-mode .why-grid div,
+
+.dark-mode .update-card{
+
+background:#1f2937;
+
+color:white;
+
+}
+
+.dark-mode .service-card p,
+
+.dark-mode .update-card{
+
+color:#e5e7eb;
+
+}
+
+.dark-mode .mission{
+
+background:#0f172a;
+
+}
+
+.dark-mode .why{
+
+background:#111827;
+
+}
+
+.dark-mode .updates{
+
+background:#0f172a;
+
+}

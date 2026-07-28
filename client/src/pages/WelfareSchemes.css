@@ -1,0 +1,136 @@
+.welfare-page{
+padding:50px;
+background:#f4f8fb;
+min-height:100vh;
+}
+
+.dark-mode .welfare-page{
+background:#111827;
+}
+
+.welfare-header{
+text-align:center;
+margin-bottom:50px;
+}
+
+.welfare-header h1{
+font-size:42px;
+color:#0f766e;
+margin-bottom:15px;
+}
+
+.dark-mode .welfare-header h1{
+color:white;
+}
+
+.welfare-header p{
+max-width:700px;
+margin:auto;
+font-size:18px;
+color:#555;
+}
+
+.dark-mode .welfare-header p{
+color:#d1d5db;
+}
+
+.search-box{
+margin-top:30px;
+width:420px;
+max-width:95%;
+padding:14px 18px;
+border-radius:10px;
+border:1px solid #ddd;
+font-size:16px;
+outline:none;
+}
+
+.dark-mode .search-box{
+background:#1f2937;
+color:white;
+border:none;
+}
+
+.scheme-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+gap:30px;
+}
+
+.scheme-card{
+background:white;
+border-radius:18px;
+padding:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+border-top:5px solid #0f766e;
+}
+
+.scheme-card:hover{
+transform:translateY(-8px);
+}
+
+.dark-mode .scheme-card{
+background:#1f2937;
+color:white;
+}
+
+.scheme-top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+.scheme-top h2{
+font-size:24px;
+margin-bottom:10px;
+}
+
+.category{
+background:#0f766e;
+color:white;
+padding:6px 14px;
+border-radius:20px;
+font-size:13px;
+}
+
+.gov-icon{
+font-size:45px;
+}
+
+.scheme-body h4{
+margin-top:18px;
+margin-bottom:8px;
+color:#2563eb;
+}
+
+.dark-mode .scheme-body h4{
+color:#60a5fa;
+}
+
+.scheme-body p{
+line-height:1.7;
+color:#555;
+}
+
+.dark-mode .scheme-body p{
+color:#e5e7eb;
+}
+
+.apply-btn{
+display:block;
+margin-top:25px;
+text-align:center;
+padding:14px;
+background:#0f766e;
+color:white;
+text-decoration:none;
+border-radius:10px;
+font-weight:600;
+transition:.3s;
+}
+
+.apply-btn:hover{
+background:#065f46;
+}
