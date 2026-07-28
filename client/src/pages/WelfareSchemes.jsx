@@ -3,92 +3,104 @@ import API from "../api/api";
 import "./WelfareSchemes.css";
 
 function WelfareSchemes() {
-  const [schemes, setSchemes] = useState([]);
-  const [search, setSearch] = useState("");
 
-  useEffect(() => {
-    API.get("/welfare")
-      .then((res) => setSchemes(res.data))
-      .catch((err) => console.log(err));
-  }, []);
+    const [schemes,setSchemes] = useState([]);
 
-  const filteredSchemes = schemes.filter((scheme) =>
-    scheme.schemeName.toLowerCase().includes(search.toLowerCase())
-  );
+    useEffect(()=>{
 
-  return (
-    <div className="welfare-page">
+        API.get("/welfare")
+        .then((res)=>{
+            console.log(res.data);
+            setSchemes(res.data);
+        })
+        .catch((err)=>{
+            console.log(err);
+        });
 
-      <div className="welfare-header">
-        <h1>🏛️ Government Welfare Schemes</h1>
+    },[]);
 
-        <p>
-          Find government welfare programmes, pension schemes and financial
-          assistance available for senior citizens in Andhra Pradesh.
-        </p>
 
-        <input
-          type="text"
-          placeholder="🔍 Search Welfare Scheme..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="search-box"
-        />
-      </div>
+    return (
 
-      <div className="scheme-grid">
+        <div className="welfare-page">
 
-        {filteredSchemes.map((scheme) => (
+            <h1>Government Welfare Schemes</h1>
 
-          <div className="scheme-card" key={scheme._id}>
+            <p>
+                Andhra Pradesh Government schemes helping senior citizens.
+            </p>
 
-            <div className="scheme-top">
 
-              <div>
+            <div className="scheme-container">
 
-                <h2>{scheme.schemeName}</h2>
+            {
+                schemes.length > 0 ?
 
-                <span className="category">
-                  {scheme.category}
-                </span>
+                schemes.map((scheme)=>(
+                    
+                    <div className="scheme-card" key={scheme._id}>
 
-              </div>
+                        <h2>
+                            {scheme.schemeName}
+                        </h2>
 
-              <div className="gov-icon">
-                🏛️
-              </div>
+
+                        <h4>
+                            Category:
+                        </h4>
+
+                        <p>
+                            {scheme.category}
+                        </p>
+
+
+                        <h4>
+                            Eligibility:
+                        </h4>
+
+                        <p>
+                            {scheme.eligibility}
+                        </p>
+
+
+                        <h4>
+                            Benefits:
+                        </h4>
+
+                        <p>
+                            {scheme.benefits}
+                        </p>
+
+
+                        <a 
+                        href={scheme.applyLink}
+                        target="_blank"
+                        >
+                        Apply Now
+                        </a>
+
+
+                    </div>
+
+                ))
+
+                :
+
+                <h2>
+                    No Welfare Schemes Available
+                </h2>
+
+            }
+
 
             </div>
 
-            <div className="scheme-body">
 
-              <h4>Eligibility</h4>
+        </div>
 
-              <p>{scheme.eligibility}</p>
+    );
 
-              <h4>Benefits</h4>
-
-              <p>{scheme.benefits}</p>
-
-            </div>
-
-            <a
-              href={scheme.applyLink}
-              target="_blank"
-              rel="noreferrer"
-              className="apply-btn"
-            >
-              Apply Now →
-            </a>
-
-          </div>
-
-        ))}
-
-      </div>
-
-    </div>
-  );
 }
+
 
 export default WelfareSchemes;

@@ -1,58 +1,118 @@
-import { useEffect, useState } from "react";
+import {useEffect,useState} from "react";
 import API from "../api/api";
 import "./Healthcare.css";
 
-function Healthcare() {
-  const [services, setServices] = useState([]);
 
-  useEffect(() => {
-    API.get("/healthcare")
-      .then((res) => setServices(res.data))
-      .catch((err) => console.log(err));
-  }, []);
+function Healthcare(){
 
-  return (
-    <div className="healthcare-page">
-      <h1>🏥 Government Healthcare Services</h1>
+const [services,setServices]=useState([]);
 
-      <p className="healthcare-subtitle">
-        Explore government hospitals, healthcare services, free medical
-        facilities, and senior citizen support available in Andhra Pradesh.
-      </p>
 
-      <div className="healthcare-container">
-        {services.map((service) => (
-          <div className="healthcare-card" key={service._id}>
-            <div className="healthcare-header">
-              <h2>{service.name}</h2>
-            </div>
+useEffect(()=>{
 
-            <p>
-              <strong>📍 Location</strong>
-            </p>
 
-            <p>{service.location}</p>
+API.get("/healthcare")
 
-            <p>
-              <strong>🏥 Services</strong>
-            </p>
+.then((res)=>{
 
-            <p>{service.services}</p>
+console.log(res.data);
 
-            <p>
-              <strong>ℹ Description</strong>
-            </p>
+setServices(res.data);
 
-            <p>{service.description}</p>
+})
 
-            <button className="health-btn">
-              View Details
-            </button>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+
+.catch((err)=>{
+
+console.log(err);
+
+});
+
+
+},[]);
+
+
+
+return(
+
+<div className="health-page">
+
+
+<h1>
+Government Healthcare Services
+</h1>
+
+
+<p>
+Healthcare facilities available for senior citizens.
+</p>
+
+
+
+<div className="health-container">
+
+
+{
+
+services.length>0 ?
+
+
+services.map((item)=>(
+
+
+<div className="health-card" key={item._id}>
+
+
+<h2>
+{item.serviceName}
+</h2>
+
+
+<p>
+{item.description}
+</p>
+
+
+<p>
+📍 {item.location}
+</p>
+
+
+<a 
+href={item.link}
+target="_blank"
+>
+Visit Service
+</a>
+
+
+</div>
+
+
+))
+
+
+:
+
+
+<h2>
+No Healthcare Services Available
+</h2>
+
+
 }
+
+
+</div>
+
+
+</div>
+
+
+);
+
+
+}
+
 
 export default Healthcare;
