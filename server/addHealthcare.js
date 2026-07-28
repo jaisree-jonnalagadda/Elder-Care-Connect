@@ -4,45 +4,54 @@ require("dotenv").config();
 const Healthcare = require("./models/Healthcare");
 
 
-const healthcareData = [
-
-    {
-        hospitalName: "Government General Hospital",
-        location: "Bhimavaram, Andhra Pradesh",
-        services: "Emergency care, OPD, General Medicine",
-        contact: "08816-223456",
-        emergency: true
-    },
-
-
-    {
-        hospitalName: "Area Hospital",
-        location: "Tanuku, Andhra Pradesh",
-        services: "Free health checkups, Surgery, Pharmacy",
-        contact: "08819-222333",
-        emergency: true
-    },
-
-
-    {
-        hospitalName: "Primary Health Centre",
-        location: "Andhra Pradesh Villages",
-        services: "Basic treatment, Vaccination, Health camps",
-        contact: "104",
-        emergency: false
-    }
-
-];
-
-
 mongoose.connect(process.env.MONGODB_URI)
 .then(async()=>{
 
-    await Healthcare.insertMany(healthcareData);
 
-    console.log("Healthcare data added successfully");
+    await Healthcare.deleteMany();
+
+
+    await Healthcare.insertMany([
+
+        {
+            hospitalName: "Government General Hospital",
+            services: "Free consultations, medicines, emergency care and senior citizen health services",
+            contact: "108 Emergency Service",
+            location: "Bhimavaram, Andhra Pradesh"
+        },
+
+
+        {
+            hospitalName: "Primary Health Centre",
+            services: "Basic treatment, health checkups and vaccination facilities",
+            contact: "104 Health Helpline",
+            location: "Andhra Pradesh"
+        },
+
+
+        {
+            hospitalName: "Ayushman Bharat Healthcare Services",
+            services: "Cashless medical treatment for eligible citizens",
+            contact: "14555 Ayushman Bharat Helpline",
+            location: "India"
+        },
+
+
+        {
+            hospitalName: "Senior Citizen Health Centre",
+            services: "Regular health checkups and geriatric healthcare support",
+            contact: "0863-2345678",
+            location: "Andhra Pradesh"
+        }
+
+    ]);
+
+
+    console.log("✅ Healthcare services added successfully");
+
 
     mongoose.connection.close();
+
 
 })
 .catch((error)=>{
